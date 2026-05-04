@@ -24,7 +24,7 @@ void nextPermutation (vector<int>& nums) {
 
 Next Permutation: (Standard Algorithm)
 
-	Step 1: Find the first decreasing point from right
+	Step 1: Find the first decreasing point from right (n - 1)
 			Find index i such that: arr[i] < arr[i+1]
 			This is called the pivot
 	
@@ -33,7 +33,14 @@ Next Permutation: (Standard Algorithm)
 	
 	Step 3: Swap them
 	
-	Step 4: Reverse the right part (from i+1 to end)
+	Step 4: Reverse the right part from pivot (from i+1 to end)
+	
+	
+	Simple way:
+		i.	Find decreasing point (pivot) i from right (n - 1)
+		ii.	Find just greater element than pivot (arr[i]) from right (n - 1)
+		iii. Swap them
+		iv.	Reverse right part from pivot arr[i]
 	
 	
 	Examples:
@@ -42,5 +49,7 @@ Next Permutation: (Standard Algorithm)
 		ii) 2 3 1 -> pivot = 2, 3 2 1 (swap) -> 3 1 2 (reverse right part) -> Final = 3 1 2
 		
 		iii) 3 2 1 -> no pivot, (means it's the last permutation) -> 1 2 3 (reverse entire array) -> Final = 1 2 3
+		
+		iv) 4 3 5 2 1 -> pivot = 3 (index = 1), (swap 3 5) -> 4 5 3 2 1 | (reverse right part) -> 4 5 1 2 3 ->  Final = 4 5 1 2 3
 
 */
